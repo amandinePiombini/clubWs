@@ -52,24 +52,24 @@ public class BookingTest {
 //	}
 //	
 	
-	@Test
-	public void testGetBookingByClient() {
-		Client client = clientService.getById(2);
-		List<Booking> booking = bookingService.getAllByIdClient(client.getId());
-		client.setBookings(booking);		
-		assertEquals( client.getBookings(), booking);
-		
-	}
-
-	
-	
-	@Test
-	public void testGetAllPartyByClubTest() {
-		Club club = clubService.getById(1);
-		List<Party> parties = partyService.getAllPartyByClub(club.getId());
-		club.setParties(parties);
-		assertEquals(club.getParties(), parties);
-	}
+//	@Test
+//	public void testGetBookingByClient() {
+//		Client client = clientService.getById(2);
+//		List<Booking> booking = bookingService.getAllByIdClient(client.getId());
+//		client.setBookings(booking);		
+//		assertEquals( client.getBookings(), booking);
+//		
+//	}
+//
+//	
+//	
+//	@Test
+//	public void testGetAllPartyByClubTest() {
+//		Club club = clubService.getById(1);
+//		List<Party> parties = partyService.getAllPartyByClub(club.getId());
+//		club.setParties(parties);
+//		assertEquals(club.getParties(), parties);
+//	}
 	
 //	@Test
 //	public void testCreateParty() {
