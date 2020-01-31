@@ -34,23 +34,23 @@ public class BookingTest {
 	@Autowired
 	private ClubService clubService;
 	
-	@Test
-	public void testCreateBooking() {
-		Client client = clientService.getById(1);
-		Party party = partyService.getById(1);
-		Booking booking = new Booking(1,party,client,15);
-		party.setCapacity(party.getCapacity()-15);
-		Booking book = bookingService.createBooking(booking);
-		if(party.getCapacity()>15) {
-		assertEquals(client, booking.getClient());
-		assertEquals(1, booking.getId());
-		assertEquals(party, booking.getParty());
-		assertEquals(15, booking.getNbCLient());
-		}else {
-			System.out.println("pas assez de place");
-		}
-	}
-	
+//	@Test
+//	public void testCreateBooking() {
+//		Client client = clientService.getById(1);
+//		Party party = partyService.getById(1);
+//		Booking booking = new Booking(1,party,client,15);
+//		party.setCapacity(party.getCapacity()-15);
+//		Booking book = bookingService.createBooking(booking);
+//		if(party.getCapacity()>15) {
+//		assertEquals(client, booking.getClient());
+//		assertEquals(1, booking.getId());
+//		assertEquals(party, booking.getParty());
+//		assertEquals(15, booking.getNbCLient());
+//		}else {
+//			System.out.println("pas assez de place");
+//		}
+//	}
+//	
 	
 	@Test
 	public void testGetBookingByClient() {
@@ -71,19 +71,19 @@ public class BookingTest {
 		assertEquals(club.getParties(), parties);
 	}
 	
-	@Test
-	public void testCreateParty() {
-		Club c = clubService.getById(1);
-		List<Booking>bookings = bookingService.getAllByParty(2);
-		Party p = new Party(2,"nom","theme","description",150, c, bookings);
-		Party party = partyService.createParty(p);
-		assertEquals(2, p.getId());
-		assertEquals("nom", p.getName());
-		assertEquals("theme", p.getTheme());
-		assertEquals("description", p.getDescription());
-		assertEquals(150, p.getCapacity());
-		assertEquals(c, p.getClub());
-		assertEquals(bookings, p.getBookings());
-		
-	}
+//	@Test
+//	public void testCreateParty() {
+//		Club c = clubService.getById(1);
+//		List<Booking>bookings = bookingService.getAllByParty(2);
+//		Party p = new Party(2,"nom","theme","description",150, c, bookings);
+//		Party party = partyService.createParty(p);
+//		assertEquals(2, p.getId());
+//		assertEquals("nom", p.getName());
+//		assertEquals("theme", p.getTheme());
+//		assertEquals("description", p.getDescription());
+//		assertEquals(150, p.getCapacity());
+//		assertEquals(c, p.getClub());
+//		assertEquals(bookings, p.getBookings());
+//		
+//	}
 }
