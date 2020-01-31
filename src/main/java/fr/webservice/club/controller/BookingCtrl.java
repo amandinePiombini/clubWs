@@ -1,21 +1,17 @@
 package fr.webservice.club.controller;
 
-import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.jws.WebParam;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.webservice.club.entity.Booking;
@@ -26,7 +22,7 @@ import fr.webservice.club.service.ClientService;
 import fr.webservice.club.service.PartyService;
 
 @RestController
-@RequestMapping(value="/booking-api/public/booking"/*, headers="Accept=application/json"*/)
+@RequestMapping(value="/booking-api/public/booking", headers="Accept=application/json")
 //@Api(tags = { "My REST Devise api (public part)" })
 @CrossOrigin("*")
 public class BookingCtrl {
@@ -79,18 +75,22 @@ public class BookingCtrl {
 //		Integer idc = 2;
 //		Integer idp = 4;
 //		Integer nb = 3;
-//		Client c = clientService.getById(idc);
-//		Party p = partyService.getById(idp);
-//		booking.setClient(c);
-//		booking.setParty(p);
-//		
-//		int dispo = p.getCapacity();
-//		if(nb<dispo) {
-//		booking.setNbCLient(nb);
-//		p.setCapacity(dispo-nb);
-//		} else {
-//			System.out.println("pas assez de place");
-//		}
+	
+		Client c = clientService.getById(2);
+		Party p = partyService.getById(1);
+		booking.setClient(clientService.getById(2));
+		booking.setParty(p);
+//	
+
+		int dispo = p.getCapacity();
+		if(4<dispo) {
+		booking.setNbCLient(4);
+		p.setCapacity(dispo-booking.getNbCLient());
+		booking.setClient(c);
+		partyService.updateCapacity(p.getCapacity());
+		} else {
+			System.out.println("pas assez de place");
+		}
 			System.out.println(booking);
 		return bookingService.createBooking(booking);
 		

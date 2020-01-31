@@ -9,8 +9,12 @@ INSERT INTO `party` (`id_party`, `name`, `theme`,`description`,`capacity`, `id_c
 INSERT INTO `party` (`id_party`, `name`, `theme`,`description`, `capacity`,`id_club`) VALUES (2, 'La Nuit de la Désintégration 2020', 'Soirée étudiante','Elogio responderunt occidi responderunt uno ordinis urgenti rationabili constantia perissent.Et turbarum traxere post avidi qui divaricaturn innexis ad traxere corpore ullo eius Montium divaricaturn.',300,2);
 INSERT INTO `party` (`id_party`, `name`, `theme`,`description`, `capacity`,`id_club`) VALUES (3, 'PSG vs OM', 'Match de football','Seleucus efficaciae porrigitur porrigitur vero post ad inpetrabilis dextra inEt turbarum traxere post avidi qui divaricaturn innexis ad traxere corpore ullo eius Montium divaricaturn.',150,1);
 INSERT INTO `party` (`id_party`, `name`, `theme`,`description`,`capacity`, `id_club`) VALUES (4, 'Flûte et caviar', 'Champagne party','Causae utilitates tamen auxit ac et quidem sic ab in.Et turbarum traxere post avidi qui divaricaturn innexis ad traxere corpore ullo eius Montium divaricaturn.',180,3);
-INSERT INTO `booking` (`id_booking`, `id_party`, `id_client`,`nbClient`) VALUES (1, 1, 2, 16);
+INSERT INTO `booking` (`id_booking`, `id_party`, `id_client`,`nbClient`) VALUES (1, 1, 4, 16);
 INSERT INTO `booking` (`id_booking`, `id_party`, `id_client`,`nbClient`) VALUES (2, 1, 3, 6);
 INSERT INTO `booking` (`id_booking`, `id_party`, `id_client`,`nbClient`) VALUES (3, 2, 2, 10);
-INSERT INTO `booking` (`id_booking`, `id_party`, `id_client`,`nbClient`) VALUES (4, 3, 2, 1);
+INSERT INTO `booking` (`id_booking`, `id_party`, `id_client`,`nbClient`) VALUES (4, 2, 3, 1);
+INSERT INTO `booking` (`id_booking`, `id_party`, `id_client`,`nbClient`) VALUES (5, 2, 4, 16);
+INSERT INTO `booking` (`id_booking`, `id_party`, `id_client`,`nbClient`) VALUES (6, 3, 3, 6);
+INSERT INTO `booking` (`id_booking`, `id_party`, `id_client`,`nbClient`) VALUES (7, 3, 3, 10);
+INSERT INTO `booking` (`id_booking`, `id_party`, `id_client`,`nbClient`) VALUES (8, 4, 2, 1);
 
